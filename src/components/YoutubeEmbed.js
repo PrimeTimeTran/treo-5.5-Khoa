@@ -25,7 +25,8 @@ const YoutubeEmbed = ({ query }) => {
         frameBorder="0"
         allowFullScreen
         title="Embedded youtube"
-        src={`https://youtube.com/embed/${trailer.id.videoId}`}
+        // src={`https://youtube.com/embed/${trailer.id.videoId}`}
+        src={`https://youtube.com/embed/odM92ap8_c0`}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       />
     </div>
