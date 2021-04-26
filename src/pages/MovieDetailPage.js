@@ -52,8 +52,8 @@ const MovieDetailPage = () => {
     }
 
     useEffect(() => {
-        fetchMovieData()
-    },[id])
+      fetchMovieData();
+    }, [id, fetchMovieData]);
 
 
     return (
