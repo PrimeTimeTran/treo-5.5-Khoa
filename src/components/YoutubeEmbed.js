@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import youtube from "../apis/youtube";
 
 const YoutubeEmbed = ({ query }) => {
   console.log(query);
   const [trailer, setTrailer] = useState({ id: { videoId: "" } });
-  const fetchTrailer = async (query) => {
+  const fetchTrailer = useCallback(async (query) => {
     console.log({ trailer });
     const response = await youtube.get("/search", {
       params: {
@@ -12,11 +12,11 @@ const YoutubeEmbed = ({ query }) => {
       },
     });
     setTrailer(response.data.items[0]);
-  };
+  }, [trailer]);
 
   useEffect(() => {
     fetchTrailer(query);
-  }, [query]);
+  }, [query, fetchTrailer]);
 
   return (
     <div className="video-responsive">
