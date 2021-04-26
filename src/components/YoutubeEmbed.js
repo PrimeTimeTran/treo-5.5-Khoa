@@ -5,6 +5,7 @@ const YoutubeEmbed = ({ query }) => {
   console.log(query);
   const [trailer, setTrailer] = useState({ id: { videoId: "" } });
   const fetchTrailer = async (query) => {
+    console.log({ trailer });
     const response = await youtube.get("/search", {
       params: {
         q: query + " trailer",
